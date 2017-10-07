@@ -39,18 +39,23 @@ $ bower install vsc-fab-button --save
 
 ## Properties
 
-Property  | Type        | Default   | Description
-:---      |:---         |:---       |:---
-`prop1`   | *String*    | `World`   | Prop description
+Property   | Type      | Default | Description
+:---       |:---       |:---     |:---
+`icon`     | *String*  | `''`    | Icon url
+`mini`     | *Boolean* | `false` | Allow mini size
+`inactive` | *Boolean* | `false` | Allow inactive state
 
 ## Styling
 
 The following custom properties and mixins are available for styling:
 
-Custom property                | Default  | Description
-:---                           |:---      |:---
---vsc-element-text-color       | #f44277  | Text color
---vsc-element-text             | {}       | Text styles
+Custom property                     | Default | Description
+:---                                |:---     |:---
+--vsc-fab-button-color              | #ff6d00 | Button background color
+--vsc-fab-button-size               | 56px    | Button size (width and height)
+--vsc-fab-button-mini-size          | 40px    | Button mini size (width and height)
+--vsc-fab-button-icon-size          | 22px    | Icon size (width and height)
+--vsc-fab-button-deafult-icon-color | #fff    | Deafault icon color
 
 
 ## Browser Support

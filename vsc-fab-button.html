@@ -10,10 +10,10 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        background: #ff6d00;
+        background: var(--vsc-fab-button-color, #ff6d00);
         border-radius: 50%;
-        width: 56px;
-        height: 56px;
+        width: var(--vsc-fab-button-size, 56px);
+        height: var(--vsc-fab-button-size, 56px);
         margin: 8px;
       }
 
@@ -27,8 +27,8 @@
       }
 
       :host([mini]) {
-        width: 40px;
-        height: 40px;
+        width: var(--vsc-fab-button-mini-size, 40px);
+        height: var(--vsc-fab-button-mini-size, 40px);
       }
 
       :host([inactive]) {
@@ -36,14 +36,14 @@
       }
 
       .paper-button__icon {
-        width: 22px;
-        height: 22px;
+        width: var(--vsc-fab-button-icon-size, 22px);
+        height: var(--vsc-fab-button-icon-size, 22px);
       }
 
       .paper-button__default-icon {
-        width: 22px;
-        height: 22px;
-        fill: #fff;
+        width: var(--vsc-fab-button-icon-size, 22px);
+        height: var(--vsc-fab-button-icon-size, 22px);
+        fill: var(--vsc-fab-button-deafult-icon-color, #fff);
       }
 
     </style>
