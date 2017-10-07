@@ -38,15 +38,45 @@
         </template>
       </demo-snippet>
 
-      <!-- With Prop - demo
+      <!-- Default inactive - demo
       ========================= -->
 
-      <h2>With Prop</h2>
+      <h2>Default inactive</h2>
 
       <demo-snippet class="centered-demo">
         <template>
 
-          <vsc-fab-button prop1="Human"></vsc-fab-button>
+          <vsc-fab-button inactive>
+          </vsc-fab-button>
+
+        </template>
+      </demo-snippet>
+
+      <!-- Default mini - demo
+      ========================= -->
+
+      <h2>Default mini</h2>
+
+      <demo-snippet class="centered-demo">
+        <template>
+
+        <vsc-fab-button mini>
+        </vsc-fab-button>
+
+        </template>
+      </demo-snippet>
+
+      <!-- Custom icon - demo
+      ========================= -->
+
+      <h2>Custom icon</h2>
+
+      <demo-snippet class="centered-demo">
+        <template>
+
+          <vsc-fab-button
+            icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
+          </vsc-fab-button>
 
         </template>
       </demo-snippet>
@@ -60,12 +90,13 @@
         <template>
 
         <style is="custom-style">
-          .shiny {
-            --vsc-element-text-color: #a1f442;
+          .unicorn {
+
           }
         </style>
 
-          <vsc-fab-button class="shiny"></vsc-fab-button>
+          <vsc-fab-button class="unicorn">
+          </vsc-fab-button>
 
         </template>
       </demo-snippet>

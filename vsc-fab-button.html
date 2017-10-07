@@ -6,36 +6,86 @@
     <style>
 
       :host {
-        display: block;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: #ff6d00;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        margin: 8px;
       }
 
-      h1 {
-        @apply (--vsc-element-text);
-        color: var(--vsc-element-text-color, #f44277);
+      :host(:hover) {
+      	cursor: pointer;
+      	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.1));
+      }
+
+      :host(:active) {
+      	background-image: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1));
+      }
+
+      :host([mini]) {
+        width: 40px;
+        height: 40px;
+      }
+
+      :host([inactive]) {
+        background: #e1e1e1;
+      }
+
+      .paper-button__icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .paper-button__default-icon {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
       }
 
     </style>
 
-    <h1>Hello [[prop1]]!</h1>
+    <slot></slot>
+
+    <template is="dom-if" if=[[icon]]>
+      <img src=[[icon]] class="paper-button__icon">
+    </template>
+
+    <template is="dom-if" if=[[!icon]]>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="paper-button__default-icon">
+        <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+      </svg>
+    </template>
 
   </template>
 
   <script>
-    class vscElement extends Polymer.Element {
+    class vscFabButton extends Polymer.Element {
 
       static get is() { return 'vsc-fab-button'; }
 
       static get properties() {
         return {
-          prop1: {
+          icon: {
             type: String,
-            value: 'World'
+            value: ''
+          },
+          mini: {
+            type: Boolean,
+            value: false
+          },
+          inactive: {
+            type: Boolean,
+            value: false
           }
         };
       }
 
     }
 
-    window.customElements.define(vscElement.is, vscElement);
+    window.customElements.define(vscFabButton.is, vscFabButton);
   </script>
 </dom-module>
