@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>vsc-fab-button test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../vsc-fab-button.html">
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture">
+      <template>
+        <vsc-fab-button></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="testFixtureWithProp">
+      <template>
+        <vsc-fab-button prop1="Humans"></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('vsc-fab-button', () => {
+
+        test('Should render the element with default <h1> text', () => {
+          const element = fixture('BasicTestFixture');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('h1');
+          assert.equal(elementHeader.innerHTML, 'Hello World!');
+        });
+
+        test('Should render the element with prop1', () => {
+          const element = fixture('testFixtureWithProp');
+          assert.equal(element.prop1, 'Humans');
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
