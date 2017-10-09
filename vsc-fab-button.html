@@ -52,8 +52,15 @@
 
       /* UI feedbacks */
 
+      .fab-button:focus {
+        outline-color: var(--vsc-fab-button-color, #ff6d00);
+        outline-offset: 5px;
+        outline-width: thin;
+      }
+
       :host(:hover) .fab-button {
         cursor: pointer;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
       }
 
       /* States */
