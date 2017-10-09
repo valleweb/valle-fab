@@ -45,6 +45,7 @@ Property    | Type      | Default | Description
 `mini`      | *Boolean* | `false` | Allow mini size
 `inactive`  | *Boolean* | `false` | Allow inactive state
 `elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
+`label`     | *String*  | `''`    | Label for screen readers
 
 ## Styling
 
@@ -55,8 +56,7 @@ Custom property                     | Default | Description
 --vsc-fab-button-color              | #ff6d00 | Button background color
 --vsc-fab-button-size               | 56px    | Button size (width and height)
 --vsc-fab-button-mini-size          | 40px    | Button mini size (width and height)
---vsc-fab-button-icon-size          | 22px    | Icon size (width and height)
---vsc-fab-button-deafult-icon-color | #fff    | Deafault icon color
+--vsc-fab-button-icon-size          | 24px    | Icon size (width and height)
 
 
 ## Browser Support

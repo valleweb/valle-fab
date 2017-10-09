@@ -73,14 +73,14 @@
 
       /* Icons */
 
-      .paper-button__icon {
+      .fab-button__icon {
         width: var(--vsc-fab-button-icon-size, 24px);
         height: var(--vsc-fab-button-icon-size, 24px);
       }
 
     </style>
 
-    <img src=[[icon]] id="fabIcon" class="paper-button__icon">
+    <img src=[[icon]] id="fabIcon" class="fab-button__icon" alt=[[label]]>
 
   </template>
 
@@ -91,7 +91,14 @@
 
       connectedCallback() {
         super.connectedCallback();
+
+        // Set default icon
         if(!this.icon) this.$.fabIcon.src = 'default-icon.svg';
+
+        // a11y powers
+        this.setAttribute('role', 'button');
+        if(!this.inactive) this.setAttribute('tabindex', '0');
+
       }
 
       static get properties() {
@@ -111,6 +118,10 @@
           elevation: {
             type: Number,
             value: 1
+          },
+          label: {
+            type: String,
+            value: ''
           }
         };
       }

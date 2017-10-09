@@ -22,12 +22,12 @@
     <script>
       suite('vsc-fab-button', () => {
 
-        test('', () => {
+        test('Should render as default icon', () => {
 
           const fab = fixture('BasicTestFixture');
-          const icon = fab.shadowRoot.querySelector('img');
+          const img = fab.shadowRoot.querySelector('img');
 
-          assert.equal(icon.nodeName, 'IMG');
+          assert.equal(img.src, '');
 
         });
 
