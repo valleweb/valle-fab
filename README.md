@@ -1,6 +1,6 @@
 # vsc-fab-button
 
-> Awesome VSC fab button
+> Awesome VSC material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
 
 [![Travis CI Status](https://travis-ci.org/valleweb/vsc-fab-button.svg?branch=master)](https://travis-ci.org/valleweb/vsc-fab-button)
 [![bower](https://img.shields.io/bower/v/vsc-fab-button.svg)](https://www.npmjs.com/package/vsc-fab-button)
@@ -39,11 +39,12 @@ $ bower install vsc-fab-button --save
 
 ## Properties
 
-Property   | Type      | Default | Description
-:---       |:---       |:---     |:---
-`icon`     | *String*  | `''`    | Icon url
-`mini`     | *Boolean* | `false` | Allow mini size
-`inactive` | *Boolean* | `false` | Allow inactive state
+Property    | Type      | Default | Description
+:---        |:---       |:---     |:---
+`icon`      | *String*  | `''`    | Icon url
+`mini`      | *Boolean* | `false` | Allow mini size
+`inactive`  | *Boolean* | `false` | Allow inactive state
+`elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
 
 ## Styling
 
