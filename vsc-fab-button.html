@@ -5,11 +5,12 @@
 
     <style>
 
-      :host {
+      .fab-button {
         box-sizing: border-box;
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        border: 0;
         background-color: var(--vsc-fab-button-color, #ff6d00);
         border-radius: 50%;
         width: var(--vsc-fab-button-size, 56px);
@@ -19,31 +20,31 @@
 
       /* Elevations */
 
-      :host([elevation="1"]) {
+      :host([elevation="1"]) .fab-button {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
                     0 1px 5px 0 rgba(0, 0, 0, 0.12),
                     0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
 
-      :host([elevation="2"]) {
+      :host([elevation="2"]) .fab-button {
       box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
                     0 1px 10px 0 rgba(0, 0, 0, 0.12),
                     0 2px 4px -1px rgba(0, 0, 0, 0.4);
       }
 
-      :host([elevation="3"]) {
+      :host([elevation="3"]) .fab-button {
         box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
                     0 1px 18px 0 rgba(0, 0, 0, 0.12),
                     0 3px 5px -1px rgba(0, 0, 0, 0.4);
       }
 
-      :host([elevation="4"]) {
+      :host([elevation="4"]) .fab-button {
       box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                     0 3px 14px 2px rgba(0, 0, 0, 0.12),
                     0 5px 5px -3px rgba(0, 0, 0, 0.4);
       }
 
-      :host([elevation="5"]) {
+      :host([elevation="5"]) .fab-button {
         box-shadow: 0 12px 16px 1px rgba(0, 0, 0, 0.14),
                     0 4px 22px 3px rgba(0, 0, 0, 0.12),
                     0 6px 7px -4px rgba(0, 0, 0, 0.4);
@@ -51,23 +52,23 @@
 
       /* UI feedbacks */
 
-      :host(:hover) {
+      :host(:hover) .fab-button {
         cursor: pointer;
-      }
-
-      :host([inactive]:hover) {
-        cursor: default;
-        background: #e1e1e1;
       }
 
       /* States */
 
-      :host([mini]) {
+      :host([mini]) .fab-button {
         width: var(--vsc-fab-button-mini-size, 40px);
         height: var(--vsc-fab-button-mini-size, 40px);
       }
 
-      :host([inactive]) {
+      :host([disabled]) .fab-button {
+        background: #e1e1e1;
+      }
+
+      :host([disabled]:hover) .fab-button {
+        cursor: default;
         background: #e1e1e1;
       }
 
@@ -80,7 +81,9 @@
 
     </style>
 
-    <img src=[[icon]] id="fabIcon" class="fab-button__icon" alt=[[label]]>
+    <button class="fab-button" disabled=[[disabled]]>
+      <img src=[[icon]] id="fabIcon" class="fab-button__icon" alt=[[label]]>
+    </button>
 
   </template>
 
@@ -95,10 +98,6 @@
         // Set default icon
         if(!this.icon) this.$.fabIcon.src = 'default-icon.svg';
 
-        // a11y powers
-        this.setAttribute('role', 'button');
-        if(!this.inactive) this.setAttribute('tabindex', '0');
-
       }
 
       static get properties() {
@@ -111,7 +110,7 @@
             type: Boolean,
             value: false
           },
-          inactive: {
+          disabled: {
             type: Boolean,
             value: false
           },

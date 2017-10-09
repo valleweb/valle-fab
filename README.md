@@ -43,7 +43,7 @@ Property    | Type      | Default | Description
 :---        |:---       |:---     |:---
 `icon`      | *String*  | `''`    | Icon url
 `mini`      | *Boolean* | `false` | Allow mini size
-`inactive`  | *Boolean* | `false` | Allow inactive state
+`disabled`  | *Boolean* | `false` | Allow disabled state
 `elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
 `label`     | *String*  | `''`    | Label for screen readers
 
