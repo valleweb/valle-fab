@@ -19,25 +19,16 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="testFixtureWithProp">
-      <template>
-        <vsc-fab-button prop1="Humans"></vsc-fab-button>
-      </template>
-    </test-fixture>
-
     <script>
       suite('vsc-fab-button', () => {
 
-        test('Should render the element with default <h1> text', () => {
-          const element = fixture('BasicTestFixture');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h1');
-          assert.equal(elementHeader.innerHTML, 'Hello World!');
-        });
+        test('', () => {
 
-        test('Should render the element with prop1', () => {
-          const element = fixture('testFixtureWithProp');
-          assert.equal(element.prop1, 'Humans');
+          const fab = fixture('BasicTestFixture');
+          const icon = fab.shadowRoot.querySelector('img');
+
+          assert.equal(icon.nodeName, 'IMG');
+
         });
 
       });

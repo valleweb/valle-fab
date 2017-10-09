@@ -78,25 +78,9 @@
         height: var(--vsc-fab-button-icon-size, 24px);
       }
 
-      .paper-button__default-icon {
-        width: var(--vsc-fab-button-icon-size, 24px);
-        height: var(--vsc-fab-button-icon-size, 24px);
-        fill: var(--vsc-fab-button-deafult-icon-color, #fff);
-      }
-
     </style>
 
-    <slot></slot>
-
-    <template is="dom-if" if=[[icon]]>
-      <img src=[[icon]] class="paper-button__icon">
-    </template>
-
-    <template is="dom-if" if=[[!icon]]>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="paper-button__default-icon">
-        <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
-      </svg>
-    </template>
+    <img src=[[icon]] id="fabIcon" class="paper-button__icon">
 
   </template>
 
@@ -104,6 +88,11 @@
     class vscFabButton extends Polymer.Element {
 
       static get is() { return 'vsc-fab-button'; }
+
+      connectedCallback() {
+        super.connectedCallback();
+        if(!this.icon) this.$.fabIcon.src = 'default-icon.svg';
+      }
 
       static get properties() {
         return {
