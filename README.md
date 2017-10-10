@@ -27,6 +27,11 @@ $ bower install vsc-fab-button --save
 <custom-element-demo>
   <template>
     <link rel="import" href="vsc-fab-button.html">
+    <style is="custom-style">
+      vsc-fab-button[icon] {
+        --vsc-fab-button-color: #ffeb00;
+      }
+    </style>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -35,6 +40,11 @@ $ bower install vsc-fab-button --save
 
 ```html
 <vsc-fab-button></vsc-fab-button>
+<vsc-fab-button disabled></vsc-fab-button>
+<vsc-fab-button mini></vsc-fab-button>
+<vsc-fab-button
+  icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
+</vsc-fab-button>
 ```
 
 ## Properties
