@@ -20,6 +20,8 @@
         border-radius: 50%;
         width: var(--vsc-fab-button-size, 56px);
         height: var(--vsc-fab-button-size, 56px);
+        transition: background-color .3s;
+
 
         /* Elevation 1 - dafault */
 
@@ -63,7 +65,7 @@
         outline-width: thin;
       }
 
-      :host(:hover) .fab-button {
+      .fab-button:hover {
         cursor: pointer;
         background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
       }
@@ -79,21 +81,30 @@
         background: #e1e1e1;
       }
 
-      :host([disabled]:hover) .fab-button {
+      :host([disabled]) .fab-button:hover {
         cursor: default;
         background: #e1e1e1;
       }
 
-      /* Icons */
+      :host([pressed]) .fab-button {
+        background-color: var(--vsc-fab-button-pressed-color, #ff0101);
+      }
+
+      /* Icon */
 
       .fab-button__icon {
         width: var(--vsc-fab-button-icon-size, 24px);
         height: var(--vsc-fab-button-icon-size, 24px);
+        transition: transform .3s;
+      }
+
+      :host([pressed]) .fab-button__icon {
+        transform: rotate(45deg);
       }
 
     </style>
 
-    <button class="fab-button" disabled=[[disabled]]>
+    <button class="fab-button" id="fabBtn" disabled=[[disabled]]>
       <img src=[[icon]] id="fabIcon" class="fab-button__icon" alt=[[label]]>
     </button>
 
@@ -109,6 +120,24 @@
 
         // Set default icon
         if(!this.icon) this.$.fabIcon.src = 'default-icon.svg';
+
+        // Add toggle powers
+        if(this.toggle) {
+          this.$.fabBtn.addEventListener('click', this._togglePressed.bind(this));
+        }
+
+      }
+
+      _togglePressed() {
+
+        if(this.hasAttribute('pressed')) {
+          this.removeAttribute('pressed', '');
+          this.$.fabBtn.setAttribute('aria-pressed', 'false');
+        } else {
+          this.pressed = true
+          this.setAttribute('pressed', '');
+          this.$.fabBtn.setAttribute('aria-pressed', 'true');
+        }
 
       }
 
@@ -133,6 +162,14 @@
           label: {
             type: String,
             value: ''
+          },
+          toggle: {
+            type: Boolean,
+            value: false
+          },
+          pressed: {
+            type: Boolean,
+            value: false
           }
         };
       }

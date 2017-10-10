@@ -56,6 +56,8 @@ Property    | Type      | Default | Description
 `disabled`  | *Boolean* | `false` | Allow disabled state
 `elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
 `label`     | *String*  | `''`    | Label for screen readers
+`toggle`    | *Boolean* | `false` | Allow toggle mode
+`pressed`   | *Boolean* | `false` | Set the pressed state (toggled)
 
 ## Styling
 
@@ -67,7 +69,7 @@ Custom property                     | Default | Description
 --vsc-fab-button-size               | 56px    | Button size (width and height)
 --vsc-fab-button-mini-size          | 40px    | Button mini size (width and height)
 --vsc-fab-button-icon-size          | 24px    | Icon size (width and height)
-
+--vsc-fab-button-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
 
 ## Browser Support
 

@@ -46,14 +46,13 @@
     <script>
       suite('vsc-fab-button', () => {
 
-        let f1, f2, f3, f4, f5;
+        let f1, f2, f3, f4;
 
         setup(() => {
           f1 = fixture('defaultFab');
           f2 = fixture('disabledFab');
           f3 = fixture('miniFab');
           f4 = fixture('customFab');
-          f5 = fixture('labeledFab');
         });
 
         test('Should render a FAB button with a default icon', () => {
@@ -101,6 +100,16 @@
 
         });
 
+      });
+
+      suite('a11y', () => {
+
+        let f5;
+
+        setup(() => {
+          f5 = fixture('labeledFab');
+        });
+
         test('Should render a FAB button with a11y label', () => {
 
           const img = f5.shadowRoot.querySelector('button img');
@@ -110,6 +119,7 @@
         });
 
       });
+
     </script>
 
   </body>
