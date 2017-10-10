@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>A11y vsc-fab-button test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../vsc-fab-button.html">
+  </head>
+  <body>
+
+    <test-fixture id="labeledFab">
+      <template>
+        <vsc-fab-button label="awesome"></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="defaultToggleFab">
+      <template>
+        <vsc-fab-button toggle></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="pressedFab">
+      <template>
+        <vsc-fab-button toggle pressed></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="clickToggleFab">
+      <template>
+        <vsc-fab-button toggle></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="noToggleFab">
+      <template>
+        <vsc-fab-button></vsc-fab-button>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('a11y', () => {
+
+        let f1, f2, f3, f4, f5, f6, f7;
+
+        setup(() => {
+          f1 = fixture('labeledFab');
+          f2 = fixture('defaultToggleFab');
+          f3 = fixture('pressedFab');
+          f4 = fixture('clickToggleFab');
+          f5 = fixture('noToggleFab');
+        });
+
+        test('Should render a FAB button with a11y label', () => {
+
+          const img = f1.shadowRoot.querySelector('button img');
+
+          expect(img.alt).to.be.equal('awesome');
+
+        });
+
+        test('Should render a FAB toggle button with default attributes', () => {
+
+          const button = f2.shadowRoot.querySelector('button');
+
+          assert.isTrue(f2.hasAttribute('toggle'));
+          assert.isFalse(f2.hasAttribute('pressed'));
+
+          assert.isTrue(button.hasAttribute('aria-pressed'));
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false')
+
+        });
+
+        test('Should render a pressed FAB toggle button', () => {
+
+          const button = f3.shadowRoot.querySelector('button');
+
+          assert.isTrue(f3.hasAttribute('pressed'));
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('true')
+
+        });
+
+        test('Can be triggered toggle with click', () => {
+
+          const button = f4.shadowRoot.querySelector('button');
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false')
+
+          button.click();
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('true')
+
+        });
+
+        test('Should render a default FAB button (no toggle)', () => {
+
+          const button = f5.shadowRoot.querySelector('button');
+
+          assert.isFalse(button.hasAttribute('aria-pressed'));
+
+        });
+
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>vsc-fab-button test</title>
+    <title>Basic vsc-fab-button test</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
@@ -37,14 +37,8 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="labeledFab">
-      <template>
-        <vsc-fab-button label="awesome"></vsc-fab-button>
-      </template>
-    </test-fixture>
-
     <script>
-      suite('vsc-fab-button', () => {
+      suite('Basic', () => {
 
         let f1, f2, f3, f4;
 
@@ -97,24 +91,6 @@
           const imgPath = img.src.replace(/^.*[\\\/]/, '');
 
           expect(imgPath).to.be.equal('fake-icon-path.svg');
-
-        });
-
-      });
-
-      suite('a11y', () => {
-
-        let f5;
-
-        setup(() => {
-          f5 = fixture('labeledFab');
-        });
-
-        test('Should render a FAB button with a11y label', () => {
-
-          const img = f5.shadowRoot.querySelector('button img');
-
-          expect(img.alt).to.be.equal('awesome');
 
         });
 

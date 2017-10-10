@@ -123,6 +123,7 @@
 
         // Add toggle powers
         if(this.toggle) {
+          this.$.fabBtn.setAttribute('aria-pressed', 'false');
           this.$.fabBtn.addEventListener('click', this._togglePressed.bind(this));
         }
 
@@ -134,7 +135,6 @@
           this.removeAttribute('pressed', '');
           this.$.fabBtn.setAttribute('aria-pressed', 'false');
         } else {
-          this.pressed = true
           this.setAttribute('pressed', '');
           this.$.fabBtn.setAttribute('aria-pressed', 'true');
         }
