@@ -64,10 +64,9 @@
           f6 = fixture('svgFab');
         });
 
-        test('Should render a FAB button with a11y label', () => {
+        test('Should render a custom icon FAB button with a11y label', () => {
 
           const img = f1.shadowRoot.querySelector('button img');
-
           expect(img.alt).to.be.equal('awesome');
 
         });

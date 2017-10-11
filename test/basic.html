@@ -53,9 +53,12 @@
 
           const button = f1.shadowRoot.querySelector('button');
           const svg = f1.shadowRoot.querySelector('button svg');
+          const img = f1.shadowRoot.querySelector('button img');
           const buttonHeight = window.getComputedStyle(button, null).getPropertyValue('height');
           const buttonWidth = window.getComputedStyle(button, null).getPropertyValue('width');
 
+          expect(svg.style.display).to.be.equal('inline-block');
+          expect(img.style.display).to.be.equal('none');
           expect(button.nodeName).to.be.equal('BUTTON');
           expect(svg.nodeName).to.be.equal('svg');
           expect(buttonHeight).to.be.equal('56px');
@@ -87,7 +90,10 @@
 
           const img = f4.shadowRoot.querySelector('button img');
           const imgPath = img.src.replace(/^.*[\\\/]/, '');
+          const svg = f4.shadowRoot.querySelector('button svg');
 
+          expect(img.style.display).to.be.equal('inline-block');
+          expect(svg.style.display).to.be.equal('none');
           expect(imgPath).to.be.equal('fake-icon-path.svg');
 
         });

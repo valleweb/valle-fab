@@ -108,7 +108,7 @@
 
     <button class="fab-button" id="fabBtn" disabled=[[disabled]]>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fab-button__icon" id="defaultIcon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fab-button__icon" style="display: inline-block;" id="defaultIcon">
         <title>[[label]]</title>
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
       </svg>
@@ -130,7 +130,7 @@
         // Set default icon
         if(this.icon) {
           this.$.defaultIcon.style.display = "none";
-          this.$.fabIcon.style.display = "block";
+          this.$.fabIcon.style.display = "inline-block";
         }
 
         // Add toggle powers
