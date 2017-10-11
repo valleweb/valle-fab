@@ -13,4 +13,4 @@ before_script:
 - polymer lint
 - eslint *.html
 script:
-- wct
+- xvfb-run wct
