@@ -3,7 +3,7 @@
 > Awesome VSC material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
 
 [![Travis CI Status](https://travis-ci.org/valleweb/vsc-fab-button.svg?branch=master)](https://travis-ci.org/valleweb/vsc-fab-button)
-[![bower](https://img.shields.io/bower/v/vsc-fab-button.svg)](https://www.npmjs.com/package/vsc-fab-button)
+[![bower](https://img.shields.io/bower/v/vsc-fab-button.svg)](https://github.com/valleweb/vsc-fab-button)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/vsc-fab-button)
 
 ## How to install and use:
