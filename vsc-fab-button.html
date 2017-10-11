@@ -8,6 +8,7 @@
       :host {
         border-radius: 50%;
         margin: 8px;
+        display: inline-block;
       }
 
       .fab-button {
@@ -96,6 +97,7 @@
         width: var(--vsc-fab-button-icon-size, 24px);
         height: var(--vsc-fab-button-icon-size, 24px);
         transition: transform .3s;
+        fill: var(--vsc-fab-button-default-icon-color, #fff);
       }
 
       :host([pressed]) .fab-button__icon {
@@ -105,7 +107,14 @@
     </style>
 
     <button class="fab-button" id="fabBtn" disabled=[[disabled]]>
-      <img src=[[icon]] id="fabIcon" class="fab-button__icon" alt=[[label]]>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fab-button__icon" id="defaultIcon">
+        <title>[[label]]</title>
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+      </svg>
+
+      <img src=[[icon]] class="fab-button__icon" alt=[[label]] style="display: none;" id="fabIcon">
+
     </button>
 
   </template>
@@ -119,7 +128,10 @@
         super.connectedCallback();
 
         // Set default icon
-        if(!this.icon) this.$.fabIcon.src = 'default-icon.svg';
+        if(this.icon) {
+          this.$.defaultIcon.style.display = "none";
+          this.$.fabIcon.style.display = "block";
+        }
 
         // Add toggle powers
         if(this.toggle) {

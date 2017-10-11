@@ -3,7 +3,6 @@
 > Awesome VSC material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
 
 [![Travis CI Status](https://travis-ci.org/valleweb/vsc-fab-button.svg?branch=master)](https://travis-ci.org/valleweb/vsc-fab-button)
-[![bower](https://img.shields.io/bower/v/vsc-fab-button.svg)](https://github.com/valleweb/vsc-fab-button)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/vsc-fab-button)
 
 ## How to install and use:
@@ -42,6 +41,7 @@ $ bower install vsc-fab-button --save
 <vsc-fab-button></vsc-fab-button>
 <vsc-fab-button disabled></vsc-fab-button>
 <vsc-fab-button mini></vsc-fab-button>
+<vsc-fab-button toggle></vsc-fab-button>
 <vsc-fab-button
   icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
 </vsc-fab-button>
@@ -69,6 +69,7 @@ Custom property                     | Default | Description
 --vsc-fab-button-size               | 56px    | Button size (width and height)
 --vsc-fab-button-mini-size          | 40px    | Button mini size (width and height)
 --vsc-fab-button-icon-size          | 24px    | Icon size (width and height)
+--vsc-fab-button-default-icon-color | #ffffff | Default icon background color
 --vsc-fab-button-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
 
 ## Browser Support

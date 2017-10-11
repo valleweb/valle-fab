@@ -52,14 +52,12 @@
         test('Should render a FAB button with a default icon', () => {
 
           const button = f1.shadowRoot.querySelector('button');
-          const img = f1.shadowRoot.querySelector('button img');
-          const imgPath = img.src.replace(/^.*[\\\/]/, '');
+          const svg = f1.shadowRoot.querySelector('button svg');
           const buttonHeight = window.getComputedStyle(button, null).getPropertyValue('height');
           const buttonWidth = window.getComputedStyle(button, null).getPropertyValue('width');
 
           expect(button.nodeName).to.be.equal('BUTTON');
-          expect(img.nodeName).to.be.equal('IMG');
-          expect(imgPath).to.be.equal('default-icon.svg');
+          expect(svg.nodeName).to.be.equal('svg');
           expect(buttonHeight).to.be.equal('56px');
           expect(buttonWidth).to.be.equal('56px');
 
