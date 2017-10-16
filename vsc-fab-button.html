@@ -143,13 +143,31 @@
 
       _togglePressed() {
 
-        if(this.hasAttribute('pressed')) {
-          this.removeAttribute('pressed', '');
-          this.$.fabBtn.setAttribute('aria-pressed', 'false');
-        } else {
-          this.setAttribute('pressed', '');
-          this.$.fabBtn.setAttribute('aria-pressed', 'true');
+        this.hasAttribute('pressed')
+        ? this._togglePressedObserver(false)
+        : this._togglePressedObserver(true)
+
+      }
+
+      _togglePressedObserver(newBooleanValue) {
+
+        if(this.toggle) {
+          if(newBooleanValue) {
+            this.setAttribute('pressed', '')
+            this.$.fabBtn.setAttribute('aria-pressed', 'true');
+          } else {
+            this.removeAttribute('pressed')
+            this.$.fabBtn.setAttribute('aria-pressed', 'false');
+          }
         }
+
+      }
+
+      _toggleDisableObserver(newBooleanValue) {
+
+        newBooleanValue
+        ? this.setAttribute('disabled', '')
+        : this.removeAttribute('disabled')
 
       }
 
@@ -165,7 +183,8 @@
           },
           disabled: {
             type: Boolean,
-            value: false
+            value: false,
+            observer: '_toggleDisableObserver'
           },
           elevation: {
             type: Number,
@@ -181,7 +200,8 @@
           },
           pressed: {
             type: Boolean,
-            value: false
+            value: false,
+            observer: '_togglePressedObserver'
           }
         };
       }
