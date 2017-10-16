@@ -144,30 +144,18 @@
       _togglePressed() {
 
         this.hasAttribute('pressed')
-        ? this._togglePressedObserver(false)
-        : this._togglePressedObserver(true)
+        ? this.removeAttribute('pressed')
+        : this.setAttribute('pressed', '')
 
       }
 
       _togglePressedObserver(newBooleanValue) {
 
         if(this.toggle) {
-          if(newBooleanValue) {
-            this.setAttribute('pressed', '')
-            this.$.fabBtn.setAttribute('aria-pressed', 'true');
-          } else {
-            this.removeAttribute('pressed')
-            this.$.fabBtn.setAttribute('aria-pressed', 'false');
-          }
+          newBooleanValue
+          ? this.$.fabBtn.setAttribute('aria-pressed', 'true')
+          : this.$.fabBtn.setAttribute('aria-pressed', 'false')
         }
-
-      }
-
-      _toggleDisableObserver(newBooleanValue) {
-
-        newBooleanValue
-        ? this.setAttribute('disabled', '')
-        : this.removeAttribute('disabled')
 
       }
 
@@ -184,7 +172,7 @@
           disabled: {
             type: Boolean,
             value: false,
-            observer: '_toggleDisableObserver'
+            reflectToAttribute: true
           },
           label: {
             type: String,
@@ -197,7 +185,8 @@
           pressed: {
             type: Boolean,
             value: false,
-            observer: '_togglePressedObserver'
+            observer: '_togglePressedObserver',
+            reflectToAttribute: true
           }
         };
       }
