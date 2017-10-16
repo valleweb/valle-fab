@@ -1,7 +1,7 @@
 {
   "name": "vsc-fab-button",
   "description": "Awesome VSC fab button",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [
     "polymer",
     "web-components"
@@ -20,6 +20,9 @@
     "**/.*",
     "bower_components"
   ],
+  "demos": {
+    "demo": "demo/index.html"
+  },
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },
