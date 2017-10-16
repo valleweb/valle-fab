@@ -143,6 +143,18 @@
 
         });
 
+        test('Should toggle aria-pressed using the javascript API', () => {
+
+          const button = f7.shadowRoot.querySelector('button');
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false');
+
+          f7.pressed = true;
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('true');
+
+        });
+
         a11ySuite('labeledFab');
         a11ySuite('defaultToggleFab');
         a11ySuite('pressedFab');

@@ -43,10 +43,16 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="pressedFab">
+      <template>
+        <vsc-fab-button toggle pressed></vsc-fab-button>
+      </template>
+    </test-fixture>
+
     <script>
       suite('Basic', () => {
 
-        let f1, f2, f3, f4, f5;
+        let f1, f2, f3, f4, f5, f6;
 
         setup(() => {
           f1 = fixture('defaultFab');
@@ -54,6 +60,7 @@
           f3 = fixture('miniFab');
           f4 = fixture('customFab');
           f5 = fixture('toggleFab');
+          f6 = fixture('pressedFab');
         });
 
         test('Should render a FAB button with a default icon', () => {
@@ -70,6 +77,20 @@
           expect(svg.nodeName).to.be.equal('svg');
           expect(buttonHeight).to.be.equal('56px');
           expect(buttonWidth).to.be.equal('56px');
+
+        });
+
+        test('Should disable the button using the javascript API', () => {
+
+          const button = f1.shadowRoot.querySelector('button');
+
+          assert.isFalse(f1.hasAttribute('disabled'));
+          assert.isFalse(button.hasAttribute('disabled'));
+
+          f1.disabled = true;
+
+          assert.isTrue(f1.hasAttribute('disabled'));
+          assert.isTrue(button.hasAttribute('disabled'));
 
         });
 
@@ -116,6 +137,26 @@
 
           button.click();
           assert.isFalse(f5.pressed);
+
+        });
+
+        test('Should press the button using the javascript API', () => {
+
+          const button = f5.shadowRoot.querySelector('button');
+
+          assert.isFalse(f5.hasAttribute('pressed'));
+
+          f5.pressed = true;
+
+          assert.isTrue(f5.hasAttribute('pressed'));
+
+        });
+
+        test('Should render a pressed toggle button', () => {
+
+          const button = f6.shadowRoot.querySelector('button');
+
+          assert.isTrue(f6.pressed);
 
         });
 
