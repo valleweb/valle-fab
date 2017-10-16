@@ -143,12 +143,18 @@
 
       _togglePressed() {
 
-        if(this.hasAttribute('pressed')) {
-          this.removeAttribute('pressed', '');
-          this.$.fabBtn.setAttribute('aria-pressed', 'false');
-        } else {
-          this.setAttribute('pressed', '');
-          this.$.fabBtn.setAttribute('aria-pressed', 'true');
+        this.hasAttribute('pressed')
+        ? this.removeAttribute('pressed')
+        : this.setAttribute('pressed', '')
+
+      }
+
+      _togglePressedObserver(newBooleanValue) {
+
+        if(this.toggle) {
+          newBooleanValue
+          ? this.$.fabBtn.setAttribute('aria-pressed', 'true')
+          : this.$.fabBtn.setAttribute('aria-pressed', 'false')
         }
 
       }
@@ -165,11 +171,8 @@
           },
           disabled: {
             type: Boolean,
-            value: false
-          },
-          elevation: {
-            type: Number,
-            value: 1
+            value: false,
+            reflectToAttribute: true
           },
           label: {
             type: String,
@@ -181,7 +184,9 @@
           },
           pressed: {
             type: Boolean,
-            value: false
+            value: false,
+            observer: '_togglePressedObserver',
+            reflectToAttribute: true
           }
         };
       }

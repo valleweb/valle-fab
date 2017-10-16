@@ -9,6 +9,7 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
+    <link rel="import" href="../../polymer/polymer.html">
     <link rel="import" href="../vsc-fab-button.html">
   </head>
   <body>
@@ -21,13 +22,13 @@
 
     <test-fixture id="defaultToggleFab">
       <template>
-        <vsc-fab-button toggle></vsc-fab-button>
+        <vsc-fab-button label="awesome" toggle></vsc-fab-button>
       </template>
     </test-fixture>
 
     <test-fixture id="pressedFab">
       <template>
-        <vsc-fab-button toggle pressed></vsc-fab-button>
+        <vsc-fab-button label="awesome" toggle pressed></vsc-fab-button>
       </template>
     </test-fixture>
 
@@ -49,11 +50,17 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="clickToggleFab">
+      <template>
+        <vsc-fab-button toggle label="awesome icon"></vsc-fab-button>
+      </template>
+    </test-fixture>
+
     <script>
 
       suite('a11y', () => {
 
-        let f1, f2, f3, f4, f5, f6;
+        let f1, f2, f3, f4, f5, f6, f7;
 
         setup(() => {
           f1 = fixture('labeledFab');
@@ -62,6 +69,7 @@
           f4 = fixture('clickToggleFab');
           f5 = fixture('noToggleFab');
           f6 = fixture('svgFab');
+          f7 = fixture('clickToggleFab');
         });
 
         test('Should render a custom icon FAB button with a11y label', () => {
@@ -120,6 +128,36 @@
           expect(svgTitle.textContent).to.be.equal('awesome icon')
 
         });
+
+        test('Should toggle aria-pressed values when click', () => {
+
+          const button = f7.shadowRoot.querySelector('button');
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false');
+
+          button.click();
+          expect(button.getAttribute('aria-pressed')).to.be.equal('true');
+
+          button.click();
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false');
+
+        });
+
+        test('Should toggle aria-pressed using the javascript API', () => {
+
+          const button = f7.shadowRoot.querySelector('button');
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('false');
+
+          f7.pressed = true;
+
+          expect(button.getAttribute('aria-pressed')).to.be.equal('true');
+
+        });
+
+        a11ySuite('labeledFab');
+        a11ySuite('defaultToggleFab');
+        a11ySuite('pressedFab');
 
       });
 
