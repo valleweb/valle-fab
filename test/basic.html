@@ -37,16 +37,23 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="toggleFab">
+      <template>
+        <vsc-fab-button toggle></vsc-fab-button>
+      </template>
+    </test-fixture>
+
     <script>
       suite('Basic', () => {
 
-        let f1, f2, f3, f4;
+        let f1, f2, f3, f4, f5;
 
         setup(() => {
           f1 = fixture('defaultFab');
           f2 = fixture('disabledFab');
           f3 = fixture('miniFab');
           f4 = fixture('customFab');
+          f5 = fixture('toggleFab');
         });
 
         test('Should render a FAB button with a default icon', () => {
@@ -95,6 +102,20 @@
           expect(img.style.display).to.be.equal('inline-block');
           expect(svg.style.display).to.be.equal('none');
           expect(imgPath).to.be.equal('fake-icon-path.svg');
+
+        });
+
+        test('Should toggle press when click', () => {
+
+          const button = f5.shadowRoot.querySelector('button');
+
+          assert.isFalse(f5.pressed);
+
+          button.click();
+          assert.isTrue(f5.pressed);
+
+          button.click();
+          assert.isFalse(f5.pressed);
 
         });
 
