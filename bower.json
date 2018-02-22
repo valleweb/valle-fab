@@ -1,21 +1,23 @@
 {
-  "name": "vsc-fab-button",
-  "description": "Awesome VSC fab button",
-  "version": "0.2.1",
+  "name": "valle-fab",
+  "description": "Awesome valle FAB",
+  "version": "1.0.0",
   "keywords": [
     "polymer",
-    "web-components"
+    "web-components",
+    "valle",
+    "FAB"
   ],
   "authors": [
     "valleweb"
   ],
-  "main": "vsc-fab-button.html",
-  "homepage": "https://github.com/valleweb/vsc-fab-button",
+  "main": "valle-fab.html",
+  "homepage": "https://github.com/valleweb/valle-fab",
   "repository": {
     "type": "git",
-    "url": "git://github.com/valleweb/vsc-fab-button"
+    "url": "git://github.com/valleweb/valle-fab"
   },
-  "license": "https://github.com/valleweb/vsc-fab-button/blob/master/LICENSE.md",
+  "license": "https://github.com/valleweb/valle-fab/blob/master/LICENSE.md",
   "ignore": [
     "**/.*",
     "bower_components"

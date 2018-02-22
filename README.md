@@ -1,22 +1,22 @@
-# vsc-fab-button
+# valle-fab
 
-> Awesome VSC material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
+> Awesome valle material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
 
-[![Travis CI Status](https://travis-ci.org/valleweb/vsc-fab-button.svg?branch=master)](https://travis-ci.org/valleweb/vsc-fab-button)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/vsc-fab-button)
+[![Travis CI Status](https://travis-ci.org/valleweb/valle-fab.svg?branch=master)](https://travis-ci.org/valleweb/valle-fab)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/valle-fab)
 
 ## How to install and use:
 
 1 - Install the element using [Bower](http://bower.io/):
 
 ```sh
-$ bower install vsc-fab-button --save
+$ bower install valle-fab --save
 ```
 
 2 -  Import the element:
 
 ```html
-<link rel="import" href="bower_components/vsc-fab-button/vsc-fab-button.html">
+<link rel="import" href="bower_components/valle-fab/valle-fab.html">
 ```
 
 3 - Start using it!
@@ -25,10 +25,10 @@ $ bower install vsc-fab-button --save
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="vsc-fab-button.html">
+    <link rel="import" href="valle-fab.html">
     <style is="custom-style">
-      vsc-fab-button[icon] {
-        --vsc-fab-button-color: #ffeb00;
+      valle-fab[icon] {
+        --valle-fab-color: #ffeb00;
       }
     </style>
     <next-code-block></next-code-block>
@@ -38,13 +38,13 @@ $ bower install vsc-fab-button --save
 -->
 
 ```html
-<vsc-fab-button></vsc-fab-button>
-<vsc-fab-button disabled></vsc-fab-button>
-<vsc-fab-button mini></vsc-fab-button>
-<vsc-fab-button toggle></vsc-fab-button>
-<vsc-fab-button
+<valle-fab></valle-fab>
+<valle-fab disabled></valle-fab>
+<valle-fab mini></valle-fab>
+<valle-fab toggle></valle-fab>
+<valle-fab
   icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
-</vsc-fab-button>
+</valle-fab>
 ```
 
 ## Properties
@@ -65,12 +65,12 @@ The following custom properties and mixins are available for styling:
 
 Custom property                     | Default | Description
 :---                                |:---     |:---
---vsc-fab-button-color              | #ff6d00 | Button background color
---vsc-fab-button-size               | 56px    | Button size (width and height)
---vsc-fab-button-mini-size          | 40px    | Button mini size (width and height)
---vsc-fab-button-icon-size          | 24px    | Icon size (width and height)
---vsc-fab-button-default-icon-color | #ffffff | Default icon background color
---vsc-fab-button-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
+--valle-fab-color              | #ff6d00 | Button background color
+--valle-fab-size               | 56px    | Button size (width and height)
+--valle-fab-mini-size          | 40px    | Button mini size (width and height)
+--valle-fab-icon-size          | 24px    | Icon size (width and height)
+--valle-fab-default-icon-color | #ffffff | Default icon background color
+--valle-fab-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
 
 ## Browser Support
 
@@ -85,7 +85,7 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11+ | Latest ✔
 1 - Install [Bower](http://bower.io/) & [Polymer-CLI](https://www.polymer-project.org/1.0/docs/tools/polymer-cli):
 
 ```sh
-$ [sudo] npm install -g bower polymer-cli
+$ [sudo] yarn global add bower polymer-cli
 ```
 
 2 - Install local dependencies:
@@ -100,7 +100,7 @@ $ bower install
 $ polymer serve
 ```
 
-Go to [localhost:8080/components/vsc-fab-button/](http://localhost:8080/components/vsc-fab-button/)
+Go to [localhost:8080/components/valle-fab/](http://localhost:8080/components/valle-fab/)
 
 
 ## Tests
@@ -110,8 +110,8 @@ Go to [localhost:8080/components/vsc-fab-button/](http://localhost:8080/componen
 Linting with eslint:
 
 ```sh
-$ [sudo] npm install -g eslint
-$ [sudo] npm install -g eslint-plugin-html
+$ [sudo] yarn global add eslint
+$ [sudo] yarn global add eslint-plugin-html
 
 $ eslint *.html
 ```
@@ -127,7 +127,7 @@ $ polymer lint
 Install the Web Component Tester (WCT) test runner:
 
 ```sh
-$ [sudo] npm install -g web-component-tester
+$ [sudo] yarn global add web-component-tester
 ```
 
 Run tests:
@@ -142,14 +142,14 @@ To keep better organization of releases we follow the [Semantic Versioning 2.0.0
 
 ## Contributing
 
-Find on our [issues](https://github.com/valleweb/vsc-fab-button/issues/) the next steps of the project ;)
+Find on our [issues](https://github.com/valleweb/valle-fab/issues/) the next steps of the project ;)
 <br>
-Want to contribute? [Follow these recommendations](https://github.com/valleweb/vsc-fab-button/blob/master/CONTRIBUTING.md).
+Want to contribute? [Follow these recommendations](https://github.com/valleweb/valle-fab/blob/master/CONTRIBUTING.md).
 
 ## History
 
-See [Releases](https://github.com/valleweb/vsc-fab-button/releases) for detailed changelog.
+See [Releases](https://github.com/valleweb/valle-fab/releases) for detailed changelog.
 
 ## License
 
-[MIT License](https://github.com/valleweb/vsc-fab-button/blob/master/LICENSE.md) © [valleweb](https://github.com/orgs/valleweb/people)
+[MIT License](https://github.com/valleweb/valle-fab/blob/master/LICENSE.md) © [valleweb](https://github.com/orgs/valleweb/people)
