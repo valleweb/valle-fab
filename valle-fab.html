@@ -122,15 +122,17 @@
   <script>
     class valleFab extends Polymer.Element {
 
-      static get is() { return 'valle-fab'; }
+      static get is() {
+        return 'valle-fab';
+      }
 
       connectedCallback() {
         super.connectedCallback();
 
         // Set default icon
         if(this.icon) {
-          this.$.defaultIcon.style.display = "none";
-          this.$.fabIcon.style.display = "inline-block";
+          this.$.defaultIcon.style.display = 'none';
+          this.$.fabIcon.style.display = 'inline-block';
         }
 
         // Add toggle powers
@@ -144,8 +146,8 @@
       _togglePressed() {
 
         this.hasAttribute('pressed')
-        ? this.removeAttribute('pressed')
-        : this.setAttribute('pressed', '')
+          ? this.removeAttribute('pressed')
+          : this.setAttribute('pressed', '');
 
       }
 
@@ -153,8 +155,8 @@
 
         if(this.toggle) {
           newBooleanValue
-          ? this.$.fabBtn.setAttribute('aria-pressed', 'true')
-          : this.$.fabBtn.setAttribute('aria-pressed', 'false')
+            ? this.$.fabBtn.setAttribute('aria-pressed', 'true')
+            : this.$.fabBtn.setAttribute('aria-pressed', 'false');
         }
 
       }
