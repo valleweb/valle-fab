@@ -58,6 +58,7 @@ Property    | Type      | Default | Description
 `label`     | *String*  | `''`    | Label for screen readers
 `toggle`    | *Boolean* | `false` | Allow toggle mode
 `pressed`   | *Boolean* | `false` | Set the pressed state (toggled)
+`sloted`    | *Boolean* | `false` | Allow inline icon (slot)
 
 ## Styling
 

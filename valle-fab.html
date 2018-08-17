@@ -108,6 +108,11 @@
 
     <button class="fab" id="fabBtn" disabled=[[disabled]]>
 
+
+      <template is="dom-if" if="[[sloted]]">
+          <slot></slot>
+      </template>
+
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fab__icon" style="display: inline-block;" id="defaultIcon">
         <title>[[label]]</title>
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
@@ -141,6 +146,12 @@
           this.$.fabBtn.addEventListener('click', this._togglePressed.bind(this));
         }
 
+        // Allow inline icon
+        if(this.sloted) {
+          this.$.defaultIcon.style.display = 'none';
+          this.$.fabIcon.style.display = 'none';
+        }
+
       }
 
       _togglePressed() {
@@ -166,6 +177,10 @@
           icon: {
             type: String,
             value: ''
+          },
+          sloted: {
+            type: Boolean,
+            default: false
           },
           mini: {
             type: Boolean,
