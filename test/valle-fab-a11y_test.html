@@ -1,16 +1,18 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>A11y valle-fab test</title>
+    <title>A11y valle-fab tests</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
 
-    <link rel="import" href="../../polymer/polymer.html">
-    <link rel="import" href="../valle-fab.html">
+    <script type="module" src="../valle-fab.js"></script>
   </head>
   <body>
 
@@ -56,8 +58,7 @@
       </template>
     </test-fixture>
 
-    <script>
-
+    <script type="module">
       suite('a11y', () => {
 
         let f1, f2, f3, f4, f5, f6, f7;
@@ -154,13 +155,7 @@
           expect(button.getAttribute('aria-pressed')).to.be.equal('true');
 
         });
-
-        a11ySuite('labeledFab');
-        a11ySuite('defaultToggleFab');
-        a11ySuite('pressedFab');
-
       });
-
     </script>
 
   </body>

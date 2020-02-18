@@ -1,22 +1,28 @@
 # valle-fab
 
-> Awesome valle material design: [Floating Action Button](https://material.io/guidelines/components/buttons-floating-action-button.html) (FAB).
+> Awesome valle-fab element - web component using Polymer 3
 
-[![Travis CI Status](https://travis-ci.org/valleweb/valle-fab.svg?branch=master)](https://travis-ci.org/valleweb/valle-fab)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/valle-fab)
+[![npm](https://img.shields.io/npm/v/@valle/valle-fab.svg)](https://www.npmjs.com/package/@valle/valle-fab)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@valle/valle-fab)
 
 ## How to install and use:
 
-1 - Install the element using [Bower](http://bower.io/):
+1 - Install the element using [Yarn](http://yarn.io/):
 
 ```sh
-$ bower install valle-fab --save
+$ yarn add @valle/valle-fab
 ```
 
 2 -  Import the element:
 
 ```html
-<link rel="import" href="bower_components/valle-fab/valle-fab.html">
+<script type="module" src="node_modules/@valle/valle-fab/valle-fab.js"></script>
+```
+
+or in your javascript file
+
+```js
+import "@valle/valle-fab/valle-fab.js";
 ```
 
 3 - Start using it!
@@ -25,12 +31,7 @@ $ bower install valle-fab --save
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="valle-fab.html">
-    <style is="custom-style">
-      valle-fab[icon] {
-        --valle-fab-color: #ffeb00;
-      }
-    </style>
+    <script type="module" src="valle-fab.js"></script>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -39,39 +40,21 @@ $ bower install valle-fab --save
 
 ```html
 <valle-fab></valle-fab>
-<valle-fab disabled></valle-fab>
-<valle-fab mini></valle-fab>
-<valle-fab toggle></valle-fab>
-<valle-fab
-  icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
-</valle-fab>
 ```
 
 ## Properties
 
-Property    | Type      | Default | Description
-:---        |:---       |:---     |:---
-`icon`      | *String*  | `''`    | Icon url
-`mini`      | *Boolean* | `false` | Allow mini size
-`disabled`  | *Boolean* | `false` | Allow disabled state
-`elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
-`label`     | *String*  | `''`    | Label for screen readers
-`toggle`    | *Boolean* | `false` | Allow toggle mode
-`pressed`   | *Boolean* | `false` | Set the pressed state (toggled)
-`sloted`    | *Boolean* | `false` | Allow inline icon (slot)
+Property  | Type        | Default   | Description
+:---      |:---         |:---       |:---
+`prop1`   | *String*    | `World`   | Prop description
 
 ## Styling
 
 The following custom properties and mixins are available for styling:
 
-Custom property                     | Default | Description
-:---                                |:---     |:---
---valle-fab-color              | #ff6d00 | Button background color
---valle-fab-size               | 56px    | Button size (width and height)
---valle-fab-mini-size          | 40px    | Button mini size (width and height)
---valle-fab-icon-size          | 24px    | Icon size (width and height)
---valle-fab-default-icon-color | #ffffff | Default icon background color
---valle-fab-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
+Custom property             | Default                   | Description
+:---                        |:---                       |:---
+--valle-fab-color  | `#fff`                    | Text color
 
 ## Browser Support
 
@@ -83,58 +66,24 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11+ | Latest ✔
 
 ## Development
 
-1 - Install [Bower](http://bower.io/) & [Polymer-CLI](https://www.polymer-project.org/1.0/docs/tools/polymer-cli):
+1 - Verify if you have [node](http://nodejs.org/) and [yarn](http://yarn.io/) installed.
+
+2 - Install [Polymer-CLI](https://www.polymer-project.org/3.0/docs/tools/polymer-cli):
 
 ```sh
-$ [sudo] yarn global add bower polymer-cli
+$ [sudo] yarn global add polymer-cli
 ```
 
-2 - Install local dependencies:
+3 - Install local dependencies:
 
 ```sh
-$ bower install
+$ yarn
 ```
 
-3 - Start the development server:
+4 - Start the development server:
 
 ```sh
-$ polymer serve
-```
-
-Go to [localhost:8080/components/valle-fab/](http://localhost:8080/components/valle-fab/)
-
-
-## Tests
-
-#### Linting
-
-Linting with eslint:
-
-```sh
-$ [sudo] yarn global add eslint
-$ [sudo] yarn global add eslint-plugin-html
-
-$ eslint *.html
-```
-
-Linting with polylint:
-
-```sh
-$ polymer lint
-```
-
-#### Unit tests
-
-Install the Web Component Tester (WCT) test runner:
-
-```sh
-$ [sudo] yarn global add web-component-tester
-```
-
-Run tests:
-
-```sh
-$ wct
+$ yarn start
 ```
 
 ## Versioning
