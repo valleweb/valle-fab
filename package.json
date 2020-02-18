@@ -1,7 +1,7 @@
 {
   "name": "@valle/valle-fab",
   "description": "Awesome valle-fab element - web component using Polymer 3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
     "valleweb"
   ],

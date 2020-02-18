@@ -40,21 +40,39 @@ import "@valle/valle-fab/valle-fab.js";
 
 ```html
 <valle-fab></valle-fab>
+<valle-fab disabled></valle-fab>
+<valle-fab mini></valle-fab>
+<valle-fab toggle></valle-fab>
+<valle-fab
+  icon="https://uploaddeimagens.com.br/images/001/071/867/full/iconmonstr-fast-food-3-32.png">
+</valle-fab>
 ```
 
 ## Properties
 
-Property  | Type        | Default   | Description
-:---      |:---         |:---       |:---
-`prop1`   | *String*    | `World`   | Prop description
+Property    | Type      | Default | Description
+:---        |:---       |:---     |:---
+`icon`      | *String*  | `''`    | Icon url
+`mini`      | *Boolean* | `false` | Allow mini size
+`disabled`  | *Boolean* | `false` | Allow disabled state
+`elevation` | *Number*  | `1`     | Add material design elevation level (1-5)
+`label`     | *String*  | `''`    | Label for screen readers
+`toggle`    | *Boolean* | `false` | Allow toggle mode
+`pressed`   | *Boolean* | `false` | Set the pressed state (toggled)
+`sloted`    | *Boolean* | `false` | Allow inline icon (slot)
 
 ## Styling
 
 The following custom properties and mixins are available for styling:
 
-Custom property             | Default                   | Description
-:---                        |:---                       |:---
---valle-fab-color  | `#fff`                    | Text color
+Custom property                     | Default | Description
+:---                                |:---     |:---
+--valle-fab-color              | #ff6d00 | Button background color
+--valle-fab-size               | 56px    | Button size (width and height)
+--valle-fab-mini-size          | 40px    | Button mini size (width and height)
+--valle-fab-icon-size          | 24px    | Icon size (width and height)
+--valle-fab-default-icon-color | #ffffff | Default icon background color
+--valle-fab-pressed-coulor     | #ff0101 | Pressed button background color (toggle)
 
 ## Browser Support
 
