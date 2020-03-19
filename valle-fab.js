@@ -8,7 +8,7 @@ class ValleFab extends PolymerElement {
           border-radius: 50%;
           margin: 8px;
           display: inline-block;
-        };
+        }
 
         .fab {
           box-sizing: border-box;
@@ -29,7 +29,7 @@ class ValleFab extends PolymerElement {
                       0 1px 5px 0 rgba(0, 0, 0, 0.12),
                       0 3px 1px -2px rgba(0, 0, 0, 0.2);
 
-        };
+        }
 
         /* Elevations */
 
@@ -37,25 +37,25 @@ class ValleFab extends PolymerElement {
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
                       0 1px 10px 0 rgba(0, 0, 0, 0.12),
                       0 2px 4px -1px rgba(0, 0, 0, 0.4);
-        };
+        }
 
         :host([elevation="3"]) .fab {
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
                       0 1px 18px 0 rgba(0, 0, 0, 0.12),
                       0 3px 5px -1px rgba(0, 0, 0, 0.4);
-        };
+        }
 
         :host([elevation="4"]) .fab {
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                       0 3px 14px 2px rgba(0, 0, 0, 0.12),
                       0 5px 5px -3px rgba(0, 0, 0, 0.4);
-        };
+        }
 
         :host([elevation="5"]) .fab {
           box-shadow: 0 12px 16px 1px rgba(0, 0, 0, 0.14),
                       0 4px 22px 3px rgba(0, 0, 0, 0.12),
                       0 6px 7px -4px rgba(0, 0, 0, 0.4);
-        };
+        }
 
         /* UI feedbacks */
 
@@ -63,32 +63,32 @@ class ValleFab extends PolymerElement {
           outline-color: var(--valle-fab-color, #ff6d00);
           outline-offset: 5px;
           outline-width: thin;
-        };
+        }
 
         .fab:hover {
           cursor: pointer;
           background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
-        };
+        }
 
         /* States */
 
         :host([mini]) .fab {
           width: var(--valle-fab-mini-size, 40px);
           height: var(--valle-fab-mini-size, 40px);
-        };
+        }
 
         :host([disabled]) .fab {
           background: #e1e1e1;
-        };
+        }
 
         :host([disabled]) .fab:hover {
           cursor: default;
           background: #e1e1e1;
-        };
+        }
 
         :host([pressed]) .fab {
           background-color: var(--valle-fab-pressed-color, #ff0101);
-        };
+        }
 
         /* Icon */
 
@@ -97,11 +97,11 @@ class ValleFab extends PolymerElement {
           height: var(--valle-fab-icon-size, 24px);
           transition: transform .3s;
           fill: var(--valle-fab-default-icon-color, #fff);
-        };
+        }
 
         :host([pressed]) .fab__icon {
           transform: rotate(45deg);
-        };
+        }
       </style>
 
       <button class="fab" id="fabBtn" disabled=[[disabled]]>
